@@ -1,0 +1,11 @@
+{
+  "name": "psychofizycznie-www",
+  "version": "1.0.0",
+  "description": "Psychofizycznie webpage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bartek Ostrowski",
+  "license": "ISC"
+}
