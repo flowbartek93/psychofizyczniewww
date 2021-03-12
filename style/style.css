@@ -1,0 +1,173 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 50px;
+}
+
+@media (min-width: 800px) {
+  .header {
+    margin: 25px 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    margin: 50px 150px;
+  }
+}
+
+.header__logo img {
+  max-width: 150px;
+}
+
+@media (min-width: 500px) {
+  .header__logo img {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 800px) {
+  .header__logo img {
+    max-width: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__logo img {
+    max-width: 300px;
+  }
+}
+
+.header__nav {
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .header__nav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.header .nav__list {
+  display: none;
+}
+
+@media (min-width: 800px) {
+  .header .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (min-width: 800px) {
+  .header .nav__item {
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .nav__item {
+    padding: 0 2rem;
+  }
+}
+
+.header .nav__link {
+  text-decoration: none;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+@media (min-width: 800px) {
+  .header .nav__link {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .nav__link {
+    font-size: 20px;
+  }
+}
+
+.header .nav__hamburger {
+  display: block;
+  float: right;
+  font-size: 32px;
+}
+
+@media (min-width: 800px) {
+  .header .nav__hamburger {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */

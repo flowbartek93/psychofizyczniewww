@@ -1,0 +1,21 @@
+$breakpoints: (small: 500px, medium:800px, large: 1200px);
+
+
+
+
+@mixin respond-above($breakpoint){
+
+
+    @if map-has-key($breakpoints, $breakpoint){
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @media (min-width: $breakpoint-value){
+            @content;
+        }
+    }
+    @else
+    {
+        @warn 'invalid breakpoint: #{$breakpoint}';
+    }
+}
+
