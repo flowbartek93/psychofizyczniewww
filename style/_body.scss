@@ -2,9 +2,10 @@
 body{
     font-family: 'Red Hat Text', sans-serif;
 }
-button{
+.btn{
     font-family: 'Red Hat Text', sans-serif;
-    font-size: 18px;
     font-weight: 500;
     color: #322B0F;
+    border: none;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
 }
