@@ -1,0 +1,68 @@
+
+
+.slider{
+    margin-bottom: 10px;
+}
+.slider__image{
+    height: 30vh;
+    background-image: url('/images/xgarda.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+  
+
+    
+}
+.slider__text{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    max-width: 50%;
+    font-size: 32px;
+    color: white;
+    font-weight: 500;
+  text-shadow: 3px 4px rgba(0, 0, 0, 0.3);
+
+
+    @include respond-above(small){
+
+        font-size: 45px;
+    }
+
+   
+
+
+}
+
+.slider__button{
+    background-color: #AAD03D;
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    width: 133px;
+    height: 43px;
+    border: none;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
+}
+
+
+.circles{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: translateX(50%);
+    
+}
+.circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color:#AAD03D;
+    border: 2px solid #322B0F;
+    margin: 0 10px;
+    
+}

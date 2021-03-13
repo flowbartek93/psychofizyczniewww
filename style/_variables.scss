@@ -1,4 +1,4 @@
-$breakpoints: (small: 500px, medium:800px, large: 1200px);
+$breakpoints: (vsmall: 300px, small: 500px, medium:800px, large: 1200px);
 
 
 
@@ -18,4 +18,23 @@ $breakpoints: (small: 500px, medium:800px, large: 1200px);
         @warn 'invalid breakpoint: #{$breakpoint}';
     }
 }
+
+
+@mixin respond-below($breakpoint){
+
+
+    @if map-has-key($breakpoints, $breakpoint){
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @media (max-width: $breakpoint-value){
+            @content;
+        }
+    }
+    @else
+    {
+        @warn 'invalid breakpoint: #{$breakpoint}';
+    }
+}
+
+
 
