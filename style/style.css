@@ -248,17 +248,46 @@ body {
   border-top: 1px solid #322B0F;
 }
 
-.mobile__top-slider {
+.slider__container--mobile {
   height: 30vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   width: 100%;
   position: relative;
 }
 
+.slider__container--mobile .slider__image {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.slider__container--mobile .fade-in {
+  -webkit-animation: fadeIn 2s ease-in 0s 1 forwards;
+          animation: fadeIn 2s ease-in 0s 1 forwards;
+}
+
+.slider__container--mobile .fade-out {
+  -webkit-animation: fadeOut 2s ease-out 0s 1 forwards;
+          animation: fadeOut 2s ease-out 0s 1 forwards;
+}
+
+.slider__container--mobile #top-1 {
+  background-image: url("/images/xgarda.jpg");
+}
+
+.slider__container--mobile #top-2 {
+  background-image: url("/images/my.jpg");
+  opacity: 0;
+}
+
+.slider__container--mobile #top-3 {
+  background-image: url("/images/joga.jpg");
+  opacity: 0;
+}
+
 @media (min-width: 800px) {
-  .mobile__top-slider {
+  .slider__container--mobile {
     display: none;
   }
 }
@@ -314,7 +343,7 @@ body {
 }
 
 /* Desktop version */
-.slider__container {
+.slider__container--desktop {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: (1fr)[2];
@@ -325,19 +354,19 @@ body {
 }
 
 @media (max-width: 800px) {
-  .slider__container {
+  .slider__container--desktop {
     display: none;
   }
 }
 
 @media (min-width: 800px) {
-  .slider__container {
+  .slider__container--desktop {
     margin: 0 100px;
   }
 }
 
 @media (min-width: 1200px) {
-  .slider__container {
+  .slider__container--desktop {
     margin: 0 200px;
     height: 500px;
   }
@@ -428,6 +457,42 @@ body {
 @media (min-width: 1200px) {
   .slider__bottom {
     font-size: 22px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
