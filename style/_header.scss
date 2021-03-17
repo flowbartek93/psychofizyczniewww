@@ -13,6 +13,17 @@
         }
 
 
+        @include respond-below(small){
+        
+           margin: 20px 10px;
+
+        }
+        @include respond-below(vsmall){
+            margin: 0;
+           
+
+        }
+
     &__logo{
 
         img{
@@ -43,37 +54,69 @@
                 align-items: center;
                 justify-content: flex-end;
         }
+
+        @include respond-below(small){
+            
+            width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+        }
     }
 
     .nav__list{
         display: none;
         @include respond-above(medium){
               display: flex;
+             
         }
 
     }
     .nav__item{
+        position: relative;
+        width: 70px;
+        height: 50px;
             @include respond-above(medium){
                 padding: 0 1rem;
             }
             @include respond-above(large){
                 padding: 0 2rem;
             }
+            
      }
 
     .nav__link{
             text-decoration: none;
-            color: black;
+            color: $woodbrown;
             font-size: 22px;
-            font-weight: bold;
+            font-weight: normal;
+            transition: 0.1s;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+      
+
 
             @include respond-above(medium){
                 font-size: 16px;
+                &:hover{
+              
+                    font-size: 18px;
+                 }
+            
             } 
 
             @include respond-above(large){
                 font-size: 20px;
-            } 
+                &:hover{
+              
+                    font-size: 22px;
+                 }
+            }
+            
+           
     }
 
     .nav__hamburger{
@@ -83,7 +126,13 @@
         @include respond-above(medium){
 
             display: none;
-        } 
+        }
+        @include respond-below(vsmall){
+            
+            font-size: 36px;
+
+        }
+        
     }
 
 }

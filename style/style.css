@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -65,6 +66,16 @@ body {
           box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.25);
 }
 
+.wrapper {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -81,6 +92,18 @@ body {
 @media (min-width: 1200px) {
   .header {
     margin: 50px 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    margin: 20px 10px;
+  }
+}
+
+@media (max-width: 300px) {
+  .header {
+    margin: 0;
   }
 }
 
@@ -125,6 +148,21 @@ body {
   }
 }
 
+@media (max-width: 500px) {
+  .header__nav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .header .nav__list {
   display: none;
 }
@@ -135,6 +173,12 @@ body {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.header .nav__item {
+  position: relative;
+  width: 70px;
+  height: 50px;
 }
 
 @media (min-width: 800px) {
@@ -151,20 +195,33 @@ body {
 
 .header .nav__link {
   text-decoration: none;
-  color: black;
+  color: #221D0B;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: normal;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (min-width: 800px) {
   .header .nav__link {
     font-size: 16px;
   }
+  .header .nav__link:hover {
+    font-size: 18px;
+  }
 }
 
 @media (min-width: 1200px) {
   .header .nav__link {
     font-size: 20px;
+  }
+  .header .nav__link:hover {
+    font-size: 22px;
   }
 }
 
@@ -180,15 +237,19 @@ body {
   }
 }
 
+@media (max-width: 300px) {
+  .header .nav__hamburger {
+    font-size: 36px;
+  }
+}
+
 .slider {
-  margin-bottom: 10px;
   background-color: rgba(196, 196, 196, 0.25);
   border-top: 1px solid #322B0F;
 }
 
-.slider__image {
+.mobile__top-slider {
   height: 30vh;
-  background-image: url("/images/xgarda.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -197,7 +258,7 @@ body {
 }
 
 @media (min-width: 800px) {
-  .slider__image {
+  .mobile__top-slider {
     display: none;
   }
 }
@@ -220,7 +281,7 @@ body {
 }
 
 .slider__button {
-  background-color: #AAD03D;
+  background-color: #aad03d;
   position: absolute;
   top: 70%;
   left: 60%;
@@ -244,12 +305,11 @@ body {
           transform: translateX(50%);
 }
 
-.circle {
+.top {
   height: 20px;
   width: 20px;
   border-radius: 50%;
   background-color: #AAD03D;
-  border: 2px solid #322B0F;
   margin: 0 10px;
 }
 
@@ -376,6 +436,12 @@ body {
   margin-bottom: 1.5rem;
 }
 
+@media (min-width: 800px) {
+  .about {
+    display: none;
+  }
+}
+
 .section-title {
   display: block;
   font-size: 1.6rem;
@@ -386,16 +452,169 @@ body {
 }
 
 .about-us {
+  border-top: 1px solid #322B0F;
   background-color: #F1F5E4;
   color: #221D0B;
   padding: 1rem;
-  font-size: 22px;
+  font-size: 18px;
+}
+
+@media (min-width: 500px) {
+  .about-us {
+    font-size: 20px;
+  }
+}
+
+.events__container {
+  border-top: 1px solid #322B0F;
+  background-color: rgba(196, 196, 196, 0.25);
+  padding: 10px 0;
 }
 
 .events__image {
-  background-image: url("/images/news.png");
-  background-repeat: no-repeat;
-  background-size: contain;
   height: 300px;
+  margin: 0 auto;
+  width: 50%;
+  background-image: url("/images/pawel.jpg");
+  background-position-y: center;
+  background-repeat: no-repeat;
+  filter: sepia(41%);
+  -webkit-filter: sepia(41%);
+  -moz-filter: sepia(41%);
+}
+
+@media (max-width: 1200px) {
+  .events__image {
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .events__image {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .events__image {
+    background-size: cover;
+  }
+}
+
+.news__container {
+  border-top: 1px solid #322B0F;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(196, 196, 196, 0.25);
+}
+
+.single-news {
+  width: 200px;
+  height: 200px;
+  background-image: url("/images/Michał.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-box-shadow: 1px 1px 14px -2px #000000;
+  box-shadow: 1px 1px 14px -2px #000000;
+}
+
+@media (min-width: 800px) {
+  .single-news {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .single-news {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.footer__container {
+  height: 100px;
+  background-color: #221D0B;
+}
+
+.footer__text {
+  font-size: 24px;
+  color: #AAD03D;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.newsletter__container {
+  padding: 20px 0;
+  background-color: rgba(196, 196, 196, 0.25);
+  border-top: 1px solid #322B0F;
+}
+
+.newsletter__title {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+@media (min-width: 1200px) {
+  .newsletter__title {
+    font-size: 28px;
+  }
+}
+
+.newsletter__modal {
+  background-color: #221D0B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60vw;
+  margin: 0 auto;
+  -webkit-box-shadow: 1px 1px 14px -2px #000000;
+  box-shadow: 1px 1px 14px -2px #000000;
+}
+
+.newsletter__modal input {
+  height: 50px;
+  width: 60%;
+}
+
+.newsletter__modal label {
+  color: #AAD03D;
+  font-weight: 500;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+  .newsletter__modal label {
+    font-size: 24px;
+  }
+}
+
+.newsletter .input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px 0;
 }
 /*# sourceMappingURL=style.css.map */

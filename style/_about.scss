@@ -3,6 +3,10 @@
 
    margin-top: 1.5rem;
    margin-bottom: 1.5rem;
+
+   @include respond-above(medium){
+       display: none;
+   }
 }
 .section-title{
     display: block;
@@ -13,9 +17,15 @@
    margin-bottom: 1rem;
 }
 .about-us{
+    border-top: 1px solid #322B0F;
     background-color: $lightgreen;
     color: $woodbrown;
     padding: 1rem;
-    font-size: 22px;
+    font-size: 18px;
+
+    @include respond-above(small){
+
+        font-size: 20px;
+    } 
     
 }

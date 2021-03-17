@@ -1,203 +1,151 @@
-
-
-.slider{
-    margin-bottom: 10px;
-    background-color: $graybg;
-    border-top: 1px solid $shitbrown;
+.slider {
+  background-color: $graybg;
+  border-top: 1px solid $shitbrown;
 }
-.slider__image{
-    height: 30vh;
-    background-image: url('/images/xgarda.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    position: relative;
+.mobile__top-slider {
+  height: 30vh;
+  // background-image: url('/images/xgarda.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  position: relative;
 
-    @include respond-above(medium){
-      display: none;
-          }
-  
-
-    
+  @include respond-above(medium) {
+    display: none;
+  }
 }
-.slider__text{
-    position: absolute;
-    top: 10%;
-    left: 10%;
-    max-width: 50%;
-    font-size: 32px;
-    color: white;
-    font-weight: 500;
+.slider__text {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  max-width: 50%;
+  font-size: 32px;
+  color: white;
+  font-weight: 500;
   text-shadow: 3px 4px rgba(0, 0, 0, 0.3);
 
-
-    @include respond-above(small){
-
-        font-size: 45px;
-    }
-
-   
-
-
+  @include respond-above(small) {
+    font-size: 45px;
+  }
 }
 
-.slider__button{
-    background-color: #AAD03D;
-    position: absolute;
-    top: 70%;
-    left: 60%;
-    width: 133px;
-    height: 43px;
-    font-size: 18px;
-
-    
+.slider__button {
+  background-color: #aad03d;
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  width: 133px;
+  height: 43px;
+  font-size: 18px;
 }
 
-
-.circles{
-    width: 50%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    transform: translateX(50%);
-    
+.circles {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transform: translateX(50%);
 }
-.circle{
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    background-color: $maingreen;
-    border: 2px solid #322B0F;
-    margin: 0 10px;
-    
+.top {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: $maingreen;
+  // border: 2px solid #322B0F;
+  margin: 0 10px;
 }
-
 
 /* Desktop version */
 
+.slider__container {
+  display: grid;
 
-.slider__container{
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  height: 400px;
 
-    
-    display: grid;
- 
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    height: 400px;
+  @include respond-below(medium) {
+    display: none;
+  }
 
+  @include respond-above(medium) {
+    margin: 0 100px;
+  }
 
-    @include respond-below(medium){
-        display: none;
-    }
-
-    @include respond-above(medium){
-
-       margin: 0 100px;
-    }
-
-
-    @include respond-above(large){
-
-        margin: 0 200px;
-        height: 500px;
-     }
-
-
+  @include respond-above(large) {
+    margin: 0 200px;
+    height: 500px;
+  }
 }
 
-.slider__left{
+.slider__left {
+  position: relative;
 
-    position: relative;
-   
+  &--title {
+    color: white;
+    font-weight: 500;
+    width: 60%;
+    transform: translate(20%, 30%);
 
-    &--title{
-     
-        color: white;
-        font-weight: 500;
-        width: 60%;
-        transform: translate(20%,30%);
-
-        @include respond-above(medium){
-
-           font-size: 42px;
-         }
-
-         @include respond-above(large){
-
-            font-size: 52px;
-         }
-
-         @include respond-above(xlarge){
-
-            font-size: 72px;
-         }
-    
+    @include respond-above(medium) {
+      font-size: 42px;
     }
 
-
-    .btn__topslider{
-        position: absolute;
-        background-color: $maingreen;
-   
-        font-size: 32px;
-        left: 50%;
-        bottom: 15%;
-        border-radius: 0.7rem;
-
-
-        @include respond-above(medium){
-
-            font-size: 24px;
-            left: 40%;
-            height: 3rem;
-            
-          }
-
-          @include respond-above(large){
-
-            font-size: 28px;
-            left: 40%;
-            height: 4rem;
-            bottom: 10%;
-            
-          }
-
-          @include respond-above(xlarge){
-
-           left: 60%;
-         }
-     
+    @include respond-above(large) {
+      font-size: 52px;
     }
-    background-color: $woodbrown;
-    grid-row: span 2;
+
+    @include respond-above(xlarge) {
+      font-size: 72px;
+    }
+  }
+
+  .btn__topslider {
+    position: absolute;
+    background-color: $maingreen;
+
+    font-size: 32px;
+    left: 50%;
+    bottom: 15%;
+    border-radius: 0.7rem;
+
+    @include respond-above(medium) {
+      font-size: 24px;
+      left: 40%;
+      height: 3rem;
+    }
+
+    @include respond-above(large) {
+      font-size: 28px;
+      left: 40%;
+      height: 4rem;
+      bottom: 10%;
+    }
+
+    @include respond-above(xlarge) {
+      left: 60%;
+    }
+  }
+  background-color: $woodbrown;
+  grid-row: span 2;
 }
-.slider__top{
-    background-image: url('/images/kasia.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: center;
-    
+.slider__top {
+  background-image: url("/images/kasia.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
 }
-.slider__bottom{
-    background-color: $lightgreen;
-    padding: 20px 20px;
-    
+.slider__bottom {
+  background-color: $lightgreen;
+  padding: 20px 20px;
 
-    @include respond-above(medium){
+  @include respond-above(medium) {
+    font-size: 18px;
+  }
 
-        font-size: 18px;
-      
-        
-      }
-
-
-      @include respond-above(large){
-
-        font-size: 22px;
-      
-        
-      }
-
+  @include respond-above(large) {
+    font-size: 22px;
+  }
 }
