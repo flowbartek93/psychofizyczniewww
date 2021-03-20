@@ -157,11 +157,36 @@
   grid-row: span 2;
 }
 .slider__top {
-  background-image: url("/images/kasia.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: center;
+  width: 100%;
+  position: relative;
+  .fade-in {
+    animation: fadeIn 2s ease-in 0s 1 forwards;
+  }
+
+  .fade-out {
+    animation: fadeOut 2s ease-out 0s 1 forwards;
+  }
+  .slider__image {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
+
+#desktop-top-1 {
+  background-image: url("/images/xgarda.jpg");
+}
+#desktop-top-2 {
+  background-image: url("/images/my.jpg");
+  opacity: 0;
+}
+#desktop-top-3 {
+  background-image: url("/images/joga.jpg");
+  opacity: 0;
+}
+
 .slider__bottom {
   background-color: $lightgreen;
   padding: 20px 20px;

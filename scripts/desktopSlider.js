@@ -1,14 +1,16 @@
-class mobileSlider {
+class desktopSlider {
   constructor() {
-    this.imagesContainer = document.querySelector(".slider__container--mobile");
-    this.images = document.querySelectorAll(
-      ".slider__container--mobile > .slider__image"
+    this.imagesContainer = document.querySelector(
+      ".slider__container--desktop"
     );
+    this.images = document.querySelectorAll(".slider__top > .slider__image");
+    this.textArea = document.querySelector(".slider__bottom");
+    this.headerArea = document.querySelector(".slider__top");
     this.topCircles = document.querySelector(".top__circles");
     this.initialWidth = window.innerWidth;
 
     this.timer = null;
-    this.isMobile = true;
+    this.isDesktop = true;
 
     this.createSlider();
   }
@@ -31,18 +33,18 @@ class mobileSlider {
   }
 
   createSlider() {
-    this.drawDots();
     this.checkWidth();
     this.resize();
   }
 
   animateSlider() {
+    this.drawDots();
     let currentIndex = 0;
     if (this.topCircles.hasChildNodes()) {
       this.topCircles.children[currentIndex].style.border = "2px solid #322B0F";
     }
 
-    if (this.isMobile) {
+    if (this.isDesktop) {
       this.timer = setInterval(() => {
         this.images[currentIndex].classList.remove("fade-in");
         this.images[currentIndex].classList.add("fade-out");
@@ -70,8 +72,8 @@ class mobileSlider {
   }
 
   checkWidth() {
-    if (this.initialWidth >= 800) {
-      this.isMobile = false;
+    if (this.initialWidth <= 800) {
+      this.isDesktop = false;
     } else {
       this.animateSlider();
     }
@@ -90,18 +92,18 @@ class mobileSlider {
     };
 
     let checkWidth = () => {
-      if (window.innerWidth >= 800) {
+      if (window.innerWidth <= 800) {
         if (this.timer) {
-          this.isMobile = false;
+          this.isDesktop = false;
           window.clearInterval(this.timer);
           console.log("clear interval");
           this.timer = null;
-          this.deleteDots();
+          // this.deleteDots();
         }
-      } else if (window.innerWidth <= 800 && this.isMobile === false) {
+      } else if (window.innerWidth >= 800 && this.isDesktop === false) {
         window.clearInterval(this.timer);
-        this.isMobile = true;
-        if (this.isMobile) {
+        this.isDesktop = true;
+        if (this.isDesktop) {
           this.animateSlider();
         }
       }
@@ -113,4 +115,4 @@ class mobileSlider {
   }
 }
 
-const run = new mobileSlider();
+const run = new desktopSlider();

@@ -1,138 +1,126 @@
-.header{
+.header {
+  display: flex;
+  margin: 20px 50px;
+  @include respond-above(medium) {
+    margin: 25px 50px;
+  }
 
-    display: flex;
-    margin: 20px 50px;
-    @include respond-above(medium){
-      margin: 25px 50px;
-        }
+  @include respond-above(large) {
+    margin: 50px 150px;
+  }
 
+  @include respond-below(small) {
+    margin: 20px 10px;
+  }
+  @include respond-below(vsmall) {
+    margin: 0;
+  }
 
-        
-        @include respond-above(large){
-            margin: 50px 150px;
-        }
+  &__logo {
+    img {
+      max-width: 150px;
 
+      @include respond-above(small) {
+        max-width: 200px;
+      }
 
-        @include respond-below(small){
-        
-           margin: 20px 10px;
+      @include respond-above(medium) {
+        max-width: 250px;
+      }
+      @include respond-above(large) {
+        max-width: 300px;
+      }
+    }
+  }
 
-        }
-        @include respond-below(vsmall){
-            margin: 0;
-           
+  &__nav {
+    width: 100%;
 
-        }
-
-    &__logo{
-
-        img{
-            max-width: 150px;
-
-            @include respond-above(small){
-               max-width: 200px;
-                }
-
-                @include respond-above(medium){
-                    max-width: 250px;
-                     }
-                     @include respond-above(large){
-                        max-width: 300px;
-                         }
-        }
-     
+    @include respond-above(medium) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
 
-    &__nav{
+    @include respond-below(small) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 
-        width: 100%;
-      
+  .nav__list {
+    display: none;
+    @include respond-above(medium) {
+      display: flex;
+    }
+  }
+  .nav__item {
+    position: relative;
+    width: 70px;
+    height: 50px;
+    @include respond-above(medium) {
+      padding: 0 1rem;
+    }
+    @include respond-above(large) {
+      padding: 0 2rem;
+    }
+  }
 
-        @include respond-above(medium){
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-        }
+  .nav__link {
+    text-decoration: none;
+    color: $woodbrown;
+    font-size: 22px;
+    font-weight: normal;
+    transition: 0.3 ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-        @include respond-below(small){
-            
-            width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+    @include respond-above(medium) {
+      font-size: 16px;
 
-        }
+      &:hover:after {
+        text-decoration: underline $maingreen;
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+      }
     }
 
-    .nav__list{
-        display: none;
-        @include respond-above(medium){
-              display: flex;
-             
-        }
-
+    @include respond-above(large) {
+      font-size: 20px;
     }
-    .nav__item{
-        position: relative;
-        width: 70px;
-        height: 50px;
-            @include respond-above(medium){
-                padding: 0 1rem;
-            }
-            @include respond-above(large){
-                padding: 0 2rem;
-            }
-            
-     }
+  }
 
-    .nav__link{
-            text-decoration: none;
-            color: $woodbrown;
-            font-size: 22px;
-            font-weight: normal;
-            transition: 0.1s;
-            position: absolute;
-            top:50%;
-            left:50%;
-            transform: translate(-50%,-50%);
-      
+  .nav__link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid $maingreen;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+  }
 
-
-            @include respond-above(medium){
-                font-size: 16px;
-                &:hover{
-              
-                    font-size: 18px;
-                 }
-            
-            } 
-
-            @include respond-above(large){
-                font-size: 20px;
-                &:hover{
-              
-                    font-size: 22px;
-                 }
-            }
-            
-           
+  .nav__hamburger {
+    display: block;
+    float: right;
+    font-size: 32px;
+    @include respond-above(medium) {
+      display: none;
     }
-
-    .nav__hamburger{
-        display: block;
-        float: right;
-       font-size: 32px;
-        @include respond-above(medium){
-
-            display: none;
-        }
-        @include respond-below(vsmall){
-            
-            font-size: 36px;
-
-        }
-        
+    @include respond-below(vsmall) {
+      font-size: 36px;
     }
-
+  }
 }
