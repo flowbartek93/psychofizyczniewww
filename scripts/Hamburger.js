@@ -1,0 +1,3 @@
+class Hamburger {
+  constructor() {}
+}

@@ -1,0 +1,17 @@
+.nav__hamburger {
+  display: block;
+  float: right;
+  font-size: 32px;
+  padding: 0 50px;
+  @include respond-above(medium) {
+    display: none;
+  }
+
+  @include respond-above(small) {
+    font-size: 42px;
+    padding: 50px 50px;
+  }
+  @include respond-below(vsmall) {
+    font-size: 36px;
+  }
+}
