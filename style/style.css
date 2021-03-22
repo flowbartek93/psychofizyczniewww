@@ -284,7 +284,7 @@ h2 {
 }
 
 .slider__container--mobile {
-  height: 30vh;
+  height: 40vh;
   width: 100%;
   position: relative;
 }
@@ -348,10 +348,17 @@ h2 {
   background-color: #aad03d;
   position: absolute;
   top: 70%;
-  left: 60%;
-  width: 133px;
-  height: 43px;
+  left: 50%;
+  padding: 10px;
   font-size: 18px;
+  border-radius: 10px;
+}
+
+@media (min-width: 500px) {
+  .slider__button {
+    padding: 15px;
+    font-size: 22px;
+  }
 }
 
 .circles {
