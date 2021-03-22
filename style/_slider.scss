@@ -87,7 +87,7 @@
 .slider__container--desktop {
   display: grid;
 
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   grid-template-columns: repeat(2, 1fr);
   height: 400px;
 
@@ -107,7 +107,7 @@
 
 .slider__left {
   position: relative;
-
+  overflow: hidden;
   &--title {
     color: white;
     font-weight: 500;
@@ -187,6 +187,26 @@
   opacity: 0;
 }
 
+#title-1 {
+  position: absolute;
+  top: -100%;
+}
+#title-2 {
+  position: absolute;
+  top: -100%;
+}
+#title-3 {
+  position: absolute;
+  top: -100%;
+}
+
+.show-title {
+  animation: showTitle 0.8s ease-in 0.3s 1 forwards;
+}
+.hide-title {
+  animation: hideTitle 0.8s ease-in 0s 1 forwards;
+}
+
 .slider__bottom {
   background-color: $lightgreen;
   padding: 20px 20px;
@@ -218,4 +238,22 @@
   100% {
     opacity: 0;
   }
+}
+
+@keyframes showTitle {
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes hideTitle {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveAbout {
 }

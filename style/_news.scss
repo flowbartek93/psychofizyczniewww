@@ -1,32 +1,27 @@
-.news__container{
-    border-top: 1px solid #322B0F;
-    width: 100%;
-    padding: 10px 0;
-    background-color: $graybg;
-    
-   
+.news__container {
+  border-top: 1px solid #322b0f;
+  width: 100%;
+  padding: 10px 0;
+  background-color: $graybg;
+  margin-bottom: 1rem;
 }
-.single-news{
-  
-    width: 200px;
-    height: 200px;
-    background-image: url('/images/Michał.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: grayscale(1);
-    -webkit-box-shadow: 1px 1px 14px -2px #000000; 
-    box-shadow: 1px 1px 14px -2px #000000;
+.single-news {
+  width: 200px;
+  height: 200px;
+  background-image: url("/images/Michał.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(1);
+  -webkit-box-shadow: 1px 1px 14px -2px #000000;
+  box-shadow: 1px 1px 14px -2px #000000;
 
+  @include respond-above(medium) {
+    width: 250px;
+    height: 250px;
+  }
 
-
-
-    @include respond-above(medium){
-        width: 250px;
-        height: 250px;
-    }
-
-    @include respond-above(large){
-        width: 300px;
-        height: 300px;
-    }
+  @include respond-above(large) {
+    width: 300px;
+    height: 300px;
+  }
 }

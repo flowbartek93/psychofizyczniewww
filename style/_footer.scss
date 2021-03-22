@@ -1,18 +1,13 @@
-.footer{
+.footer {
+  &__container {
+    height: 100px;
+    background-color: $woodbrown;
+  }
 
-    &__container{
-        height: 100px;
-        background-color: $woodbrown;
-  
-    }
-
-    &__text{
-        font-size: 24px;
-        color: $maingreen;
-        text-align: center;
-        padding: 20px 0;
-    }
-
-
-
+  &__text {
+    font-size: 24px;
+    color: $maingreen;
+    text-align: center;
+    padding: 20px 0;
+  }
 }

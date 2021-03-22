@@ -71,9 +71,9 @@
 
   .nav__link {
     text-decoration: none;
-    color: $woodbrown;
+    color: black;
     font-size: 22px;
-    font-weight: normal;
+    font-weight: 500;
     transition: 0.3 ease-in-out;
     position: absolute;
     top: 50%;
@@ -89,6 +89,9 @@
         -webkit-transform: scale(1);
         transform: scale(1);
       }
+      &:hover {
+        color: $woodbrown;
+      }
     }
 
     @include respond-above(large) {
@@ -103,7 +106,7 @@
     display: inline-block;
     height: 1em;
     width: 100%;
-    border-bottom: 1px solid $maingreen;
+    border-bottom: 2px solid $maingreen;
     margin-top: 10px;
     opacity: 0;
     -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;

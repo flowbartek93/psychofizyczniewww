@@ -4,11 +4,11 @@ class desktopSlider {
       ".slider__container--desktop"
     );
     this.images = document.querySelectorAll(".slider__top > .slider__image");
+    this.titles = document.querySelectorAll(".slider__left--title");
     this.textArea = document.querySelector(".slider__bottom");
     this.headerArea = document.querySelector(".slider__top");
     this.topCircles = document.querySelector(".top__circles");
     this.initialWidth = window.innerWidth;
-
     this.timer = null;
     this.isDesktop = true;
 
@@ -48,10 +48,21 @@ class desktopSlider {
       this.timer = setInterval(() => {
         this.images[currentIndex].classList.remove("fade-in");
         this.images[currentIndex].classList.add("fade-out");
+        this.titles[currentIndex].classList.replace("show-title", "hide-title");
 
         if (currentIndex < 2) {
           this.topCircles.children[currentIndex].style.border = "none";
           currentIndex++;
+
+          if (this.titles[currentIndex].classList.contains("hide-title")) {
+            this.titles[currentIndex].classList.replace(
+              "hide-title",
+              "show-title"
+            );
+          } else {
+            this.titles[currentIndex].classList.add("show-title");
+          }
+
           this.images[currentIndex].classList.remove("fade-out");
           this.images[currentIndex].classList.add("fade-in");
 
@@ -59,6 +70,11 @@ class desktopSlider {
             "2px solid #322B0F";
         } else {
           currentIndex = 0;
+          this.titles[this.titles.length - 1].classList.add("hide-title");
+          this.titles[currentIndex].classList.replace(
+            "hide-title",
+            "show-title"
+          );
           this.images[currentIndex].classList.add("fade-in");
           this.images[currentIndex].classList.remove("fade-out");
           this.topCircles.children[currentIndex].style.border =

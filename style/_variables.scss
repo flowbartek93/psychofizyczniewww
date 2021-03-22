@@ -1,45 +1,39 @@
-$breakpoints: (vsmall: 300px, small: 500px, medium:800px, large: 1200px, xlarge:1600px);
+$breakpoints: (
+  vsmall: 300px,
+  small: 500px,
+  medium: 800px,
+  xmedium: 1000px,
+  large: 1200px,
+  laptop: 1400px,
+  xlarge: 1600px,
+);
 
 $graybg: rgba(196, 196, 196, 0.25);
-$maingreen: #AAD03D;
-$shitbrown: #322B0F;
-$woodbrown: #221D0B;
-$lightgreen: #F1F5E4;
+$maingreen: #aad03d;
+$shitbrown: #322b0f;
+$woodbrown: #221d0b;
+$lightgreen: #f1f5e4;
 
+@mixin respond-above($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-
-@mixin respond-above($breakpoint){
-
-
-    @if map-has-key($breakpoints, $breakpoint){
-        $breakpoint-value: map-get($breakpoints, $breakpoint);
-
-        @media (min-width: $breakpoint-value){
-            @content;
-        }
+    @media (min-width: $breakpoint-value) {
+      @content;
     }
-    @else
-    {
-        @warn 'invalid breakpoint: #{$breakpoint}';
-    }
+  } @else {
+    @warn 'invalid breakpoint: #{$breakpoint}';
+  }
 }
 
+@mixin respond-below($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-@mixin respond-below($breakpoint){
-
-
-    @if map-has-key($breakpoints, $breakpoint){
-        $breakpoint-value: map-get($breakpoints, $breakpoint);
-
-        @media (max-width: $breakpoint-value){
-            @content;
-        }
+    @media (max-width: $breakpoint-value) {
+      @content;
     }
-    @else
-    {
-        @warn 'invalid breakpoint: #{$breakpoint}';
-    }
+  } @else {
+    @warn 'invalid breakpoint: #{$breakpoint}';
+  }
 }
-
-
-

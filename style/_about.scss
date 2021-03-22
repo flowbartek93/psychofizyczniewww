@@ -1,31 +1,111 @@
+.about {
+  margin: 1.5rem 0px;
+  background-color: $graybg;
+  border-top: 1px solid $shitbrown;
 
-.about{
+  h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    text-align: center;
 
-   margin-top: 1.5rem;
-   margin-bottom: 1.5rem;
+    @include respond-above(medium) {
+      text-align: left;
+    }
+    @include respond-above(medium) {
+      font-size: 1.3rem;
+    }
 
-   @include respond-above(medium){
-       display: none;
-   }
-}
-.section-title{
-    display: block;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    font-weight: 700;
-   text-align: center;
-   margin-bottom: 1rem;
-}
-.about-us{
-    border-top: 1px solid #322B0F;
-    background-color: $lightgreen;
-    color: $woodbrown;
-    padding: 1rem;
-    font-size: 18px;
+    @include respond-above(large) {
+      font-size: 1.6rem;
+    }
+    @include respond-above(laptop) {
+      font-size: 1.9rem;
+    }
+    @include respond-above(xlarge) {
+      font-size: 2rem;
+    }
+  }
+  p {
+    font-size: 1rem;
+    padding: 1rem 0rem;
 
-    @include respond-above(small){
+    @include respond-above(small) {
+      font-size: 1rem;
+    }
+    @include respond-above(medium) {
+      font-size: 1rem;
+    }
 
-        font-size: 20px;
-    } 
-    
+    @include respond-above(xmedium) {
+      font-size: 1.1rem;
+    }
+
+    @include respond-above(large) {
+      font-size: 1rem;
+    }
+    @include respond-above(laptop) {
+      font-size: 1.2rem;
+    }
+    @include respond-above(xlarge) {
+      font-size: 1.3rem;
+    }
+
+    // @include respond-below(xmedium) {
+    //   font-size: 0.8rem;
+    // }
+  }
+  &__image {
+    width: 400px;
+
+    @include respond-above(medium) {
+      width: 350px;
+    }
+
+    @include respond-above(xmedium) {
+      width: 450px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+
+      margin: 0 auto;
+    }
+  }
+
+  &__us {
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    @include respond-above(small) {
+      // margin: 0 50px;
+    }
+    @include respond-above(medium) {
+      padding: 0 20px;
+      width: 50%;
+      align-items: flex-start;
+    }
+    @include respond-above(xlarge) {
+      margin-left: 50px;
+    }
+  }
+  &__container {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-above(medium) {
+      flex-direction: row;
+      margin: 0 50px;
+    }
+
+    @include respond-above(large) {
+      margin: 0 150px;
+    }
+    @include respond-above(xlarge) {
+      margin: 0 300px;
+    }
+  }
 }
