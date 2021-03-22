@@ -1,50 +1,30 @@
-.events{
-
-    
-&__container{
-    border-top: 1px solid #322B0F;
+.events {
+  &__container {
+    border-top: 1px solid #322b0f;
     background-color: $graybg;
     padding: 10px 0;
-    
-   
-  
-}
+  }
 
-
-&__image{
-   
+  &__image {
     height: 300px;
     margin: 0 auto;
-   width: 50%;
-    background-image: url('/images/pawel.jpg');
+    width: 50%;
+    background-image: url("./images/pawel.jpg");
     background-position-y: center;
     background-repeat: no-repeat;
     filter: sepia(41%);
     -webkit-filter: sepia(41%);
     -moz-filter: sepia(41%);
 
-
- 
-    @include respond-below(large){
-        width: 80%;
+    @include respond-below(large) {
+      width: 80%;
     }
-    @include respond-below(medium){
-        width: 100%;
+    @include respond-below(medium) {
+      width: 100%;
     }
 
-    @include respond-below(small){
-    
-        background-size: cover;
-   
+    @include respond-below(small) {
+      background-size: cover;
     }
-
-       } 
-
-
-  
-    
-
-
-
-
+  }
 }
