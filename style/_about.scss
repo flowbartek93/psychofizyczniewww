@@ -29,8 +29,8 @@
     font-size: 1rem;
     padding: 1rem 0rem;
 
-    @include respond-above(small) {
-      font-size: 1rem;
+    @include respond-below(medium) {
+      margin: 0 2rem;
     }
     @include respond-above(medium) {
       font-size: 1rem;
@@ -55,7 +55,11 @@
     // }
   }
   &__image {
-    width: 400px;
+    @include respond-below(medium) {
+      width: 300px;
+      margin: 0 auto;
+      padding-bottom: 1rem;
+    }
 
     @include respond-above(medium) {
       width: 350px;
