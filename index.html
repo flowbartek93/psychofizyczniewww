@@ -20,19 +20,37 @@
       <div class="header__logo">
         <img src="./images/logopsychoficznie.png" alt="" />
       </div>
-      <nav class="header__nav">
+      <div class="header__nav">
         <div class="nav__hamburger">
-          <i class="fas fa-bars"></i>
+          <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
         </div>
 
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">O Nas</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Warsztaty</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Zajęcia</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
-        </ul>
-      </nav>
+        <nav class="nav-mobile">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">O Nas</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Warsztaty</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Zajęcia</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-desktop">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Home</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">O Nas</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Warsztaty</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Zajęcia</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Kontakt</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <section class="slider">
@@ -140,5 +158,6 @@
 
     <script src="./scripts/mobileSlider.js" type="module"></script>
     <script src="./scripts/desktopSlider.js" type="module"></script>
+    <script src="./scripts/Hamburger.js" type="module"></script>
   </body>
 </html>

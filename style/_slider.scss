@@ -99,12 +99,19 @@
   }
 
   @include respond-above(medium) {
-    margin: 0 100px;
+    margin: 0 50px;
   }
 
   @include respond-above(large) {
-    margin: 0 200px;
+    margin: 0 150px;
     height: 500px;
+  }
+
+  @include respond-above(laptop) {
+    margin: 0 200px;
+  }
+  @include respond-above(xlarge) {
+    margin: 0 300px;
   }
 }
 
