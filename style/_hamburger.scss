@@ -33,6 +33,9 @@
     transform-origin: center;
     transform: rotateZ(-45deg) translate(14px, -14px);
     background-color: $maingreen;
+    @include respond-above(small) {
+      transform: rotateZ(-45deg) translate(19px, -19px);
+    }
   }
 
   @include respond-above(medium) {

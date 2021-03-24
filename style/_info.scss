@@ -1,0 +1,61 @@
+.info {
+  margin-bottom: 10px;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 25px;
+
+    padding: 1rem 0;
+
+    @include respond-above(large) {
+      margin: 0 100px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    i {
+      font-size: 40px;
+      color: $maingreen;
+    }
+    p {
+      display: none;
+    }
+
+    @include respond-above(small) {
+      i {
+        font-size: 50px;
+      }
+    }
+
+    @include respond-above(medium) {
+      p {
+        text-align: center;
+        display: block;
+        font-style: italic;
+        color: rgb(88, 87, 87);
+      }
+      i {
+        padding: 10px 0;
+        font-size: 45px;
+      }
+    }
+
+    @include respond-above(large) {
+      p {
+        display: block;
+        font-style: italic;
+        color: rgb(88, 87, 87);
+        font-size: 18px;
+      }
+      i {
+        padding: 10px 0;
+        font-size: 60px;
+      }
+    }
+  }
+}

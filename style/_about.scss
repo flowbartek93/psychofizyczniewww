@@ -2,6 +2,7 @@
   margin: 1.5rem 0px;
   background-color: $graybg;
   border-top: 1px solid $shitbrown;
+  border-bottom: 1px solid $shitbrown;
 
   h2 {
     font-weight: 500;
@@ -9,6 +10,7 @@
     @include respond-above(vsmall) {
       text-align: center;
       font-size: 1.5rem;
+      padding-top: 0.5rem;
     }
 
     @include respond-above(small) {
@@ -41,8 +43,9 @@
     }
   }
   p {
+    color: $woodbrown;
     font-size: 1rem;
-    padding: 1rem 0rem;
+    padding: 1rem 1rem;
 
     @include respond-above(small) {
       margin: 0;
@@ -101,12 +104,15 @@
       display: block;
       width: 100%;
       border-radius: 10px;
+      -webkit-box-shadow: 5px 6px 4px -2px rgba(0, 0, 0, 0.8);
+      box-shadow: 5px 6px 4px -2px rgba(0, 0, 0, 0.8);
     }
   }
 
   &__us {
     display: flex;
     flex-direction: column;
+
     @include respond-above(small) {
       padding: 0 50px;
       width: 70%;

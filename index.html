@@ -131,7 +131,21 @@
     <section class="events">
       <span class="section-title">Wydarzenia</span>
       <div class="events__container">
-        <div class="events__image"></div>
+        <img
+          alt="image"
+          srcset="
+            ./images/pawel-350w.jpg 350w,
+            ./images/pawel-450w.jpg 450w,
+            ./images/pawel-700w.jpg 700w
+          "
+          sizes="
+          (min-width: 800px) 700px,
+          (min-width: 500px) 450px,
+          (max-width: 499px) 350px,
+     
+        
+          "
+        />
       </div>
     </section>
 
@@ -149,6 +163,25 @@
         </div>
       </div>
     </section> -->
+
+    <section class="info">
+      <div class="info__container">
+        <div class="info__item">
+          <i class="fas fa-envelope"></i>
+          <p>kontakt@psychofizycznie.pl</p>
+          <p>+48737965708</p>
+        </div>
+        <div class="info__item">
+          <i class="fab fa-facebook"></i>
+          <p>Odwiedź nasz oficjalny fanpage i bądź na bieżąco !</p>
+        </div>
+        <div class="info__item">
+          <i class="fas fa-map-marked-alt"></i>
+          <p>ul. Plac Grunwaldzki 8</p>
+          <p>40-127 Katowice</p>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer">
       <div class="footer__container">
