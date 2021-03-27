@@ -4,7 +4,7 @@
   border-bottom: 1px solid $shitbrown;
 }
 .slider__container--mobile {
-  height: 40vh;
+  height: 30vh;
   width: 100%;
   position: relative;
 
@@ -56,19 +56,21 @@
 }
 
 .slider__button {
-  background-color: #aad03d;
   position: absolute;
   top: 70%;
   left: 50%;
   padding: 10px;
   font-size: 18px;
   border-radius: 10px;
+  -webkit-box-shadow: 3px 4px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 4px 4px 1px rgba(0, 0, 0, 0.5);
 
   @include respond-above(small) {
     padding: 15px;
     font-size: 22px;
   }
 }
+
 .circles {
   width: 50%;
   height: 50px;
@@ -140,8 +142,6 @@
 
   .btn__topslider {
     position: absolute;
-    background-color: $maingreen;
-
     font-size: 32px;
     left: 50%;
     bottom: 15%;
@@ -229,6 +229,16 @@
   @include respond-above(large) {
     font-size: 22px;
   }
+}
+
+.btn {
+  background-color: $maingreen;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background-color: $darkgreen;
+  color: white;
 }
 
 @keyframes fadeIn {

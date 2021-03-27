@@ -1,0 +1,56 @@
+.container {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid $shitbrown;
+
+  .article {
+    padding: 2rem 0;
+    padding-left: 1rem;
+    width: 100%;
+    margin: 0 50px;
+    font-size: 1.1rem;
+
+    @include respond-above(xsmall) {
+      margin: 0 100px;
+      width: 70%;
+      padding-left: 5rem;
+    }
+
+    @include respond-above(medium) {
+      font-size: 1.2rem;
+      margin: 0 100px;
+      width: 70%;
+      padding-left: 6.5rem;
+    }
+    @include respond-above(xmedium) {
+      font-size: 1.2rem;
+      margin: 0 100px;
+      width: 70%;
+      padding-left: 8rem;
+    }
+
+    @include respond-above(laptop) {
+      font-size: 1.3rem;
+      margin: 0 100px;
+      width: 60%;
+      padding-left: 20rem;
+    }
+    @include respond-above(xlarge) {
+      font-size: 1.4rem;
+      margin: 0 250px;
+      padding-top: 5rem;
+      padding-left: 20rem;
+    }
+    h2 {
+      font-size: 2rem;
+      font-weight: medium;
+
+      @include respond-above(laptop) {
+        font-size: 3rem;
+      }
+    }
+    p {
+      margin: 2rem 0;
+    }
+  }
+}

@@ -1,5 +1,4 @@
 .about {
-  margin: 1.5rem 0px;
   background-color: $graybg;
   border-top: 1px solid $shitbrown;
   border-bottom: 1px solid $shitbrown;
@@ -33,7 +32,7 @@
     }
 
     @include respond-above(large) {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
     @include respond-above(laptop) {
       font-size: 1.9rem;
@@ -67,7 +66,7 @@
     }
 
     @include respond-above(large) {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     @include respond-above(laptop) {
       font-size: 1.2rem;
@@ -90,13 +89,18 @@
       padding-bottom: 20px;
     }
     @include respond-above(xsmall) {
+      position: relative;
       width: 350px;
     }
     @include respond-above(medium) {
       width: 350px;
     }
 
-    @include respond-above(xmedium) {
+    @include respond-above(laptop) {
+      width: 400px;
+    }
+
+    @include respond-above(xlarge) {
       width: 450px;
     }
 
@@ -106,6 +110,12 @@
       border-radius: 10px;
       -webkit-box-shadow: 5px 6px 4px -2px rgba(0, 0, 0, 0.8);
       box-shadow: 5px 6px 4px -2px rgba(0, 0, 0, 0.8);
+
+      @include respond-above(xsmall) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 
