@@ -1,115 +1,126 @@
 class mobileSlider {
   constructor() {
-    this.imagesContainer = document.querySelector(".slider__container--mobile");
-    this.images = document.querySelectorAll(
-      ".slider__container--mobile > .slider__image"
-    );
-    this.topCircles = document.querySelector(".top__circles");
+    this.imagesContainer = document.querySelector(".slider__container");
+    this.images = document.querySelectorAll(".container__image");
+    this.circles = document.querySelector(".circles");
+    this.sliderTexts = document.querySelectorAll(".textarea__text");
     this.initialWidth = window.innerWidth;
-
     this.timer = null;
     this.isMobile = true;
-
     this.createSlider();
   }
 
-  drawDots() {
-    if (this.topCircles.children.length === 0) {
-      this.images.forEach((_, index) => {
-        const circle = document.createElement("div");
-        circle.setAttribute("class", "top circle");
-        circle.setAttribute("data-id", `${index + 1}`);
-        this.topCircles.appendChild(circle);
-      });
-    }
+  events() {
+    window.addEventListener("resize", () => {
+      console.log("resize events");
+      this.checkResize();
+    });
   }
 
-  deleteDots() {
-    while (this.topCircles.hasChildNodes()) {
-      this.topCircles.removeChild(this.topCircles.childNodes[0]);
+  drawDots() {
+    if (this.circles.children.length === 0) {
+      this.images.forEach((_, index) => {
+        const circle = document.createElement("div");
+        circle.setAttribute("class", "circles__circle");
+        circle.setAttribute("data-id", `${index + 1}`);
+        this.circles.appendChild(circle);
+      });
     }
   }
 
   createSlider() {
     this.drawDots();
     this.checkWidth();
-    this.resize();
+    this.events();
+  }
+
+  switchSlider() {
+    if (!this.isMobile) {
+      this.imagesContainer.classList.add("container--desktop");
+    }
+
+    if (this.isMobile) {
+      this.imagesContainer.classList.remove("container--desktop");
+    }
   }
 
   animateSlider() {
     let currentIndex = 0;
-    if (this.topCircles.hasChildNodes()) {
-      this.topCircles.children[currentIndex].style.border = "2px solid #322B0F";
-    }
 
-    if (this.isMobile) {
-      this.timer = setInterval(() => {
-        this.images[currentIndex].classList.remove("fade-in");
-        this.images[currentIndex].classList.add("fade-out");
+    // Setting default display for all effects before first interval
+    this.images[currentIndex].classList.add("fade");
+    this.circles.children[currentIndex].classList.add("active");
+    this.sliderTexts[currentIndex].classList.add("show");
 
-        if (currentIndex < 2) {
-          this.topCircles.children[currentIndex].style.border = "none";
-          currentIndex++;
-          this.images[currentIndex].classList.remove("fade-out");
-          this.images[currentIndex].classList.add("fade-in");
+    this.timer = setInterval(() => {
+      currentIndex++;
 
-          this.topCircles.children[currentIndex].style.border =
-            "2px solid #322B0F";
-        } else {
-          currentIndex = 0;
-          this.images[currentIndex].classList.add("fade-in");
-          this.images[currentIndex].classList.remove("fade-out");
-          this.topCircles.children[currentIndex].style.border =
-            "2px solid #322B0F";
-          this.topCircles.children[this.images.length - 1].style.border =
-            "none";
-          this.images[this.images.length - 1].classList.add("fade-out");
-        }
-      }, 6000);
-    }
+      // First interval until current index gets bigger than 2
+      if (currentIndex <= this.images.length - 1) {
+        // Switching circles
+        this.circles.children[currentIndex - 1].classList.toggle("active");
+        this.circles.children[currentIndex].classList.toggle("active");
+
+        // Switching images
+        this.images[currentIndex - 1].classList.toggle("fade");
+        this.images[currentIndex].classList.toggle("fade");
+
+        // Switching texts
+
+        this.sliderTexts[currentIndex - 1].classList.replace("show", "hide");
+        this.sliderTexts[currentIndex].classList.add("show");
+        this.sliderTexts[currentIndex].classList.remove("hide");
+      }
+
+      // If index gets bigger than 2
+      if (currentIndex > this.images.length - 1) {
+        currentIndex = 0;
+
+        // Switching circles
+        this.circles.children[currentIndex].classList.toggle("active");
+        this.circles.children[this.images.length - 1].classList.toggle(
+          "active"
+        );
+
+        // Switching images
+        this.images[currentIndex].classList.toggle("fade");
+        this.images[this.images.length - 1].classList.toggle("fade");
+
+        // Switching texts
+
+        this.sliderTexts[this.images.length - 1].classList.replace(
+          "show",
+          "hide"
+        );
+        this.sliderTexts[currentIndex].classList.add("show");
+        this.sliderTexts[currentIndex].classList.remove("hide");
+      }
+    }, 4000);
   }
 
   checkWidth() {
     if (this.initialWidth >= 800) {
       this.isMobile = false;
+
+      this.switchSlider();
+      this.animateSlider();
     } else {
       this.animateSlider();
     }
   }
 
-  resize() {
-    const debounce = (fn, delay) => {
-      let timer;
+  checkResize() {
+    if (window.innerWidth <= 800) {
+      this.isMobile = true;
+      this.switchSlider();
+      console.log("mniej niz 800");
+    }
 
-      return function () {
-        clearTimeout(timer);
-        timer = setTimeout(() => {
-          fn();
-        }, delay);
-      };
-    };
-
-    let checkWidth = () => {
-      if (window.innerWidth >= 800) {
-        if (this.timer) {
-          this.isMobile = false;
-          window.clearInterval(this.timer);
-          console.log("clear interval");
-          this.timer = null;
-          this.deleteDots();
-        }
-      } else if (window.innerWidth <= 800 && this.isMobile === false) {
-        window.clearInterval(this.timer);
-        this.isMobile = true;
-        if (this.isMobile) {
-          this.animateSlider();
-        }
-      }
-    };
-
-    // checkWidth = debounce(checkWidth, 500);
-
-    window.addEventListener("resize", debounce(checkWidth, 500));
+    if (window.innerWidth >= 800) {
+      this.isMobile = false;
+      this.switchSlider();
+      console.log("więcej niz 800");
+    }
   }
 }
 

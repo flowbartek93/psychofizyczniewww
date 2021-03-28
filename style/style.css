@@ -315,86 +315,162 @@ h2 {
 .slider {
   background-color: rgba(196, 196, 196, 0.25);
   border-top: 1px solid #322b0f;
+}
+
+.slider__container {
+  height: 30vh;
+  position: relative;
   border-bottom: 1px solid #322b0f;
 }
 
-.slider__container--mobile {
-  height: 30vh;
-  width: 100%;
-  position: relative;
-}
-
-.slider__container--mobile .slider__image {
+.container__image {
   position: absolute;
+  z-index: 5;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   width: 100%;
+  -webkit-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 
-.slider__container--mobile .fade-in {
-  -webkit-animation: fadeIn 2s ease-in 0s 1 forwards;
-          animation: fadeIn 2s ease-in 0s 1 forwards;
+.textarea {
+  position: absolute;
+  font-size: 2.5rem;
+  z-index: 20;
+  height: 100%;
+  width: 80%;
+  overflow: hidden;
 }
 
-.slider__container--mobile .fade-out {
-  -webkit-animation: fadeOut 2s ease-out 0s 1 forwards;
-          animation: fadeOut 2s ease-out 0s 1 forwards;
+.textarea__text {
+  position: absolute;
+  top: -100%;
+  text-shadow: 3px 3px 2px rgba(34, 33, 33, 0.5);
+  left: 10%;
+  color: white;
+  font-weight: 500;
+  width: 60%;
 }
 
-.slider__container--mobile #top-1 {
+@media (min-width: 800px) {
+  .textarea__text {
+    font-size: 42px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .textarea__text {
+    font-size: 52px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .textarea__text {
+    font-size: 72px;
+  }
+}
+
+.text.show {
+  -webkit-animation: show 1s ease-in 0s 1 normal forwards;
+          animation: show 1s ease-in 0s 1 normal forwards;
+}
+
+.text.hide {
+  -webkit-animation: hide 1s ease-in 0s 1 normal forwards;
+          animation: hide 1s ease-in 0s 1 normal forwards;
+}
+
+@-webkit-keyframes show {
+  100% {
+    top: 10%;
+  }
+}
+
+@keyframes show {
+  100% {
+    top: 10%;
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    top: 10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes hide {
+  0% {
+    top: 10%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.container--desktop {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 800px) {
+  .container--desktop {
+    margin: 0 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container--desktop {
+    margin: 0 150px;
+    height: 500px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container--desktop {
+    margin: 0 200px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container--desktop {
+    margin: 0 300px;
+  }
+}
+
+.container--desktop .container__images {
+  position: relative;
+}
+
+.container--desktop .container__textarea {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background-color: #181408;
+}
+
+.image-1 {
   background-image: url("../images/xgarda.jpg");
+  opacity: 0;
 }
 
-.slider__container--mobile #top-2 {
+.image-2 {
   background-image: url("../images/my.jpg");
   opacity: 0;
 }
 
-.slider__container--mobile #top-3 {
+.image-3 {
   background-image: url("../images/joga.jpg");
   opacity: 0;
 }
 
-@media (min-width: 800px) {
-  .slider__container--mobile {
-    display: none;
-  }
-}
-
-.slider__text {
-  position: absolute;
-  top: 10%;
-  left: 10%;
-  max-width: 50%;
-  font-size: 32px;
-  color: white;
-  font-weight: 500;
-  text-shadow: 3px 4px rgba(0, 0, 0, 0.3);
-}
-
-@media (min-width: 500px) {
-  .slider__text {
-    font-size: 45px;
-  }
-}
-
-.slider__button {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 10px;
-  -webkit-box-shadow: 3px 4px 4px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 3px 4px 4px 1px rgba(0, 0, 0, 0.5);
-}
-
-@media (min-width: 500px) {
-  .slider__button {
-    padding: 15px;
-    font-size: 22px;
-  }
+.container__image.fade {
+  opacity: 1;
 }
 
 .circles {
@@ -412,280 +488,22 @@ h2 {
           transform: translateX(50%);
 }
 
-.top {
+.circles__circle {
   height: 20px;
   width: 20px;
   border-radius: 50%;
   background-color: #aad03d;
+  border: 2px solid rgba(50, 43, 15, 0);
   margin: 0 10px;
+  -webkit-transition: border 0.5s;
+  transition: border 0.5s;
 }
 
-/* Desktop version */
-.slider__container--desktop {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (1fr)[1];
-      grid-template-rows: repeat(1, 1fr);
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
-  height: 400px;
+.circles .active {
+  border: 2px solid #322b0f;
 }
 
-@media (max-width: 800px) {
-  .slider__container--desktop {
-    display: none;
-  }
-}
-
-@media (min-width: 800px) {
-  .slider__container--desktop {
-    margin: 0 50px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .slider__container--desktop {
-    margin: 0 150px;
-    height: 500px;
-  }
-}
-
-@media (min-width: 1400px) {
-  .slider__container--desktop {
-    margin: 0 200px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .slider__container--desktop {
-    margin: 0 300px;
-  }
-}
-
-.slider__left {
-  position: relative;
-  overflow: hidden;
-  background-color: #181408;
-  grid-row: span 2;
-}
-
-.slider__left--title {
-  color: white;
-  font-weight: 500;
-  width: 60%;
-  -webkit-transform: translate(20%, 30%);
-          transform: translate(20%, 30%);
-}
-
-@media (min-width: 800px) {
-  .slider__left--title {
-    font-size: 42px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .slider__left--title {
-    font-size: 52px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .slider__left--title {
-    font-size: 72px;
-  }
-}
-
-.slider__left .btn__topslider {
-  position: absolute;
-  font-size: 32px;
-  left: 50%;
-  bottom: 15%;
-  border-radius: 0.7rem;
-}
-
-@media (min-width: 800px) {
-  .slider__left .btn__topslider {
-    font-size: 24px;
-    left: 40%;
-    height: 3rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .slider__left .btn__topslider {
-    font-size: 28px;
-    left: 40%;
-    height: 4rem;
-    bottom: 10%;
-  }
-}
-
-@media (min-width: 1600px) {
-  .slider__left .btn__topslider {
-    left: 60%;
-  }
-}
-
-.slider__top {
-  width: 100%;
-  position: relative;
-}
-
-.slider__top .fade-in {
-  -webkit-animation: fadeIn 2s ease-in 0s 1 forwards;
-          animation: fadeIn 2s ease-in 0s 1 forwards;
-}
-
-.slider__top .fade-out {
-  -webkit-animation: fadeOut 2s ease-out 0s 1 forwards;
-          animation: fadeOut 2s ease-out 0s 1 forwards;
-}
-
-.slider__top .slider__image {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
-}
-
-#desktop-top-1 {
-  background-image: url("../images/xgarda.jpg");
-}
-
-#desktop-top-2 {
-  background-image: url("../images/my.jpg");
-  opacity: 0;
-}
-
-#desktop-top-3 {
-  background-image: url("../images/joga.jpg");
-  opacity: 0;
-}
-
-#title-1 {
-  position: absolute;
-  top: -100%;
-}
-
-#title-2 {
-  position: absolute;
-  top: -100%;
-}
-
-#title-3 {
-  position: absolute;
-  top: -100%;
-}
-
-.show-title {
-  -webkit-animation: showTitle 0.8s ease-in 0.3s 1 forwards;
-          animation: showTitle 0.8s ease-in 0.3s 1 forwards;
-}
-
-.hide-title {
-  -webkit-animation: hideTitle 0.8s ease-in 0s 1 forwards;
-          animation: hideTitle 0.8s ease-in 0s 1 forwards;
-}
-
-.slider__bottom {
-  background-color: #f1f5e4;
-  padding: 20px 20px;
-}
-
-@media (min-width: 800px) {
-  .slider__bottom {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .slider__bottom {
-    font-size: 22px;
-  }
-}
-
-.btn {
-  background-color: #aad03d;
-  cursor: pointer;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  background-color: #4d5b2a;
-  color: white;
-}
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes showTitle {
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes showTitle {
-  100% {
-    top: 0;
-  }
-}
-
-@-webkit-keyframes hideTitle {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-@keyframes hideTitle {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 100%;
-  }
-}
-
-@-webkit-keyframes moveAbout {}
-
-@keyframes moveAbout {}.about {
+.about {
   background-color: rgba(196, 196, 196, 0.25);
   border-top: 1px solid #322b0f;
   border-bottom: 1px solid #322b0f;
