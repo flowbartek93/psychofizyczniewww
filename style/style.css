@@ -323,6 +323,12 @@ h2 {
   border-bottom: 1px solid #322b0f;
 }
 
+@media (min-width: 650px) {
+  .slider__container {
+    height: 40vh;
+  }
+}
+
 @media (min-width: 800px) {
   .slider__container {
     height: 60vh;
@@ -331,7 +337,7 @@ h2 {
 
 @media (min-width: 1000px) {
   .slider__container {
-    height: 40vh;
+    height: 50vh;
   }
 }
 
@@ -362,7 +368,7 @@ h2 {
   color: white;
   font-weight: 500;
   width: 60%;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 @media (min-width: 500px) {
@@ -371,9 +377,15 @@ h2 {
   }
 }
 
+@media (min-width: 650px) {
+  .textarea__text {
+    font-size: 42px;
+  }
+}
+
 @media (min-width: 800px) {
   .textarea__text {
-    font-size: 38px;
+    font-size: 44px;
   }
 }
 
@@ -385,7 +397,7 @@ h2 {
 
 @media (min-width: 1600px) {
   .textarea__text {
-    font-size: 72px;
+    font-size: 62px;
   }
 }
 
@@ -445,7 +457,6 @@ h2 {
 @media (min-width: 1200px) {
   .container--desktop {
     margin: 0 150px;
-    height: 500px;
   }
 }
 
