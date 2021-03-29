@@ -325,6 +325,12 @@ h2 {
 
 @media (min-width: 800px) {
   .slider__container {
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .slider__container {
     height: 40vh;
   }
 }

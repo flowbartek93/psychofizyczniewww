@@ -8,6 +8,10 @@
     border-bottom: 1px solid $shitbrown;
 
     @include respond-above(medium) {
+      height: 60vh;
+    }
+
+    @include respond-above(xmedium) {
       height: 40vh;
     }
   }
