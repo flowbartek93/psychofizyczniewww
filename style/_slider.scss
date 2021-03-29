@@ -23,7 +23,7 @@
 // Mobile version
 .textarea {
   position: absolute;
-  font-size: 2.5rem;
+  // font-size: 2.5rem;
   z-index: 20;
   height: 100%;
   width: 80%;
@@ -37,7 +37,11 @@
     color: white;
     font-weight: 500;
     width: 60%;
+    font-size: 24px;
 
+    @include respond-above(small) {
+      font-size: 32px;
+    }
     @include respond-above(medium) {
       font-size: 42px;
     }
